@@ -45,12 +45,7 @@ app.controller('modifyController', function($scope, $http, URL, $routeParams, $l
 			console.dir(response.data);
 		});
 		
-		
-		
 	};
-	
-	
-	
 	
 	
 });
