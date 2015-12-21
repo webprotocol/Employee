@@ -17,24 +17,29 @@ drop table member;
 
 create table member (
 	id				int,
-	email			varchar(255),
-	name			varchar(255),
-	password 		varchar(255),
+	email			varchar(255) not null,
+	name			varchar(255) not null,
+	password 		varchar(255) not null,
 	register_date	date,
-	constraint pk_id primary key (id)
+	constraint pk_member_id primary key (id)
 );
 
 -- 
 -- Member CRUD (Create, Read, Update, Delete)
 -- DML(Data Manipulation Language)
 -- Create
+select * from user_tables
 
-create sequence member_id_seq
+select * from user_sequences
+
+drop sequence member_id_generator
+
+create sequence member_id_generator
 
 insert into member
 (id, email, name, password, register_date)
 values
-(member_id_seq.nextval, 'xxx@yyy', '홍길동', '1234', '2015/11/11')
+(member_id_generator.nextval, 'xxx@hybrid.com', '홍길동', '1234', '2015/12/21')
 
 -- Read
 select * from member;
@@ -163,13 +168,6 @@ create table country (
   code2 			char(2),
   constraint pk_country_code primary key (code)
 )
-
-
-
-
-
-
-
 
 
 
