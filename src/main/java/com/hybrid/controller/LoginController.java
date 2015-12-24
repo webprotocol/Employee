@@ -34,7 +34,8 @@ public class LoginController {
 	 * login.html
 	 */
 	@RequestMapping(value="/login.html", method=RequestMethod.GET)
-	public String getLoginView() {
+	public String getLoginView(HttpSession session) {
+		log.info("getLoginView()...");
 		
 		return "user/login";		
 	}
@@ -59,6 +60,23 @@ public class LoginController {
 		session.invalidate();
 		
 		return "redirect:/user/login.html";
+//		return "redirect:/city/main.html";
+	}
+	
+	@RequestMapping(value = "/logincheck", method=RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> logincheck(HttpSession session) {
+		Map<String, Object> map = new HashMap<>();
+		
+		Boolean login = (Boolean) session.getAttribute("login");
+		if (login != null && login == true) {
+			map.put("login", true);
+			map.put("member", session.getAttribute("member"));
+		} else {
+			map.put("login", false);
+		}
+		
+		return map;
 	}
 	
 	@ExceptionHandler

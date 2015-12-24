@@ -17,13 +17,22 @@
 <link rel="stylesheet" href="${menu_sider}"/>
 <script type="text/javascript" src="${menu_sider_js}"></script>
 
+<script type="text/javascript">
+	app.controller("navController", function($scope, $http) {
+
+		var ajax = $http.get("<c:url value="/user/logincheck"/>");
+		ajax.then(function(value) {
+			$scope.$parent.loginstatus = value.data.login;
+		});
+	});
+</script>
 </head>
 <body data-ng-controller="mainController">
 
 <div id="wrapper">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <nav data-ng-controller="navController" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -31,7 +40,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">World</a>
+            <a class="navbar-brand" href="index.html">Employee</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -225,6 +234,7 @@
                 </ul>
                 <!-- /.dropdown-alerts -->
             </li>
+            
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -236,7 +246,8 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li data-ng-hide="loginstatus">{{loginstatus}}<a href="<c:url value="/user/login.html"/>"><i class="fa fa-sign-out fa-fw"></i> Login</a>
+                    <li data-ng-show="loginstatus">{{loginstatus}}<a href="<c:url value="/user/logout"/>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -263,13 +274,13 @@
                         <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> World<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html">Flot Charts</a>
+                                <a href="<c:url value="/city/main.html"/>">City</a>
                             </li>
                             <li>
-                                <a href="morris.html">Morris.js Charts</a>
+                                <a href="<c:url value="/country/main.html"/>">Country</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

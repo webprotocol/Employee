@@ -7,6 +7,7 @@
   <!-- Map decorators to path patterns. -->
   <mapping path="/city/main.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
   <mapping path="/country/main.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
+  <mapping path="/user/login.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
   
 <!--   <mapping path="/*.special.jsp" decorator="/special-decorator.html"/> -->
 
