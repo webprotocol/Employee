@@ -17,7 +17,7 @@
   </filter>
   <filter-mapping>
     <filter-name>loginFilter</filter-name>
-    <url-pattern>/city/*</url-pattern>  
+<!--     <url-pattern>/city/*</url-pattern>   -->
     <url-pattern>/xxx/*</url-pattern>
   </filter-mapping>
   
