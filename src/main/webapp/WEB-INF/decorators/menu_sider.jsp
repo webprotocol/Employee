@@ -23,6 +23,7 @@
 		var ajax = $http.get("<c:url value="/user/logincheck"/>");
 		ajax.then(function(value) {
 			$scope.$parent.loginstatus = value.data.login;
+			$scope.$parent.member = value.data.member;
 		});
 	});
 </script>

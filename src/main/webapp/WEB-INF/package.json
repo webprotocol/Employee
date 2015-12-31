@@ -19,6 +19,7 @@
     "font-awesome": "^4.5.0",
     "jquery": "^2.1.4",
     "metismenu": "^2.2.0",
+    "ng-file-upload": "^11.0.0",
     "ngmap": "^1.15.3"
   }
 }

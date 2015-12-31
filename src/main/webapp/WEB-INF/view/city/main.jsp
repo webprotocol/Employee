@@ -87,6 +87,7 @@
 </head>
 <body data-ng-controller="mainController" class="container">
 <pre>{{loginstatus}}</pre>
+<h1>{{member.email}}</h1>
 
 <h1>{{title}}</h1>
 <div data-ng-view>
