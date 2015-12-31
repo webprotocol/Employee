@@ -47,5 +47,8 @@
 <bean id="websocketHandler" class="com.hybrid.handler.WebsocketEndPoint">
 </bean>
 
+<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+
+</bean>
 
 </beans>
