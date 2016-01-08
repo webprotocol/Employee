@@ -74,7 +74,7 @@ insert into city
 values
 (
 	'java',
-	'web',
+	'홍길동',
 	'programming',
 	1000000
 )
@@ -109,6 +109,14 @@ select id,
  -- start, length
  -- from 0
  
+
+ drop table xxx;
+ create table xxx (
+ 	name varchar(2)
+ 
+ )
+ 
+ insert into xxx values ('한글한');
  
  
  

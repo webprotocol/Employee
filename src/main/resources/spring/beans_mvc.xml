@@ -39,6 +39,8 @@
 <mvc:resources location="/WEB-INF/node_modules/font-awesome/" mapping="/font-awesome/**"/>
 <mvc:resources location="/WEB-INF/node_modules/metismenu/" mapping="/metismenu/**"/>
 
+<mvc:resources location="/WEB-INF/node_modules/ng-file-upload/" mapping="/ng-file-upload/**"/>
+
 
 <websocket:handlers>
     <websocket:mapping handler="websocketHandler" path="/echo"></websocket:mapping>

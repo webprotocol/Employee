@@ -99,7 +99,7 @@ values
 (
 	city_id_generator.nextVal,
 	'xxxx',
-	'KOR',
+	'홍길동',
 	'Asia',
 	99998
 )
@@ -170,7 +170,13 @@ create table country (
 )
 
 
-
+ drop table xxx;
+ create table xxx (
+ 	name varchar(1 char)
+ 
+ )
+ 
+ insert into xxx values ('한');
 
 
 
