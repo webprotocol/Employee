@@ -26,6 +26,13 @@
 		
 		$scope.title = $filter('date')(new Date(),'yyyy-MM-dd');
 
+		$scope.pass = 12;
+		$scope.pass2 = 13;
+		
+		$scope.xxx = function() {
+			return angular.equals($scope.pass, $scope.pass2);
+// 			return $scope.pass == $scope.pass2;
+		};
 		
 	});
 
@@ -36,7 +43,7 @@
 <h1>date = {{title}}</h1>
 <button ng-click="">post</button>
 
-
+{{xxx()}}
 
 </body>
 </html>
